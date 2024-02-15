@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'reusable_card.dart';
+import 'icon_content.dart';
 
 const bottomContainerHeight = 80.0;
 const colorOfWidgets = Color(0xFF1D1E33);
@@ -22,28 +25,35 @@ class _InputPageState extends State<InputPage> {
             child: Row(
               children: [
                 Expanded(
-                  child: ReusableCard(colorOfWidgets),
+                  child: ReusableCard(
+                    colorOfWidgets,
+                    IconContent(FontAwesomeIcons.mars, 'MALE'),
+                  ),
                 ),
                 Expanded(
-                  child: ReusableCard(colorOfWidgets),
+                  child: ReusableCard(
+                    colorOfWidgets,
+                    IconContent(FontAwesomeIcons.venus, 'FEMALE'),
+                  ),
                 ),
               ],
             ),
           ),
           Expanded(
-            child: ReusableCard(colorOfWidgets),
+            child: ReusableCard(colorOfWidgets, Container()),
           ),
           Expanded(
             child: Row(
               children: [
                 Expanded(
-                  child: ReusableCard(colorOfWidgets),
+                  child: ReusableCard(colorOfWidgets, Container()),
                 ),
                 Expanded(
-                  child: ReusableCard(colorOfWidgets),
+                  child: ReusableCard(colorOfWidgets, Container()),
                 ),
               ],
-            ),),
+            ),
+          ),
           Container(
             color: bottomColorOfWidgets,
             margin: EdgeInsets.only(top: 10.0),
@@ -51,23 +61,6 @@ class _InputPageState extends State<InputPage> {
             height: bottomContainerHeight,
           )
         ],
-      ),
-    );
-  }
-}
-
-class ReusableCard extends StatelessWidget {
-  ReusableCard(this.colour);
-
-  final Color colour;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.all(15.0),
-      decoration: BoxDecoration(
-        color: colour,
-        borderRadius: BorderRadius.circular(10.0),
       ),
     );
   }
