@@ -217,6 +217,8 @@ class _InputPageState extends State<InputPage> {
           BottomButton(
             () {
               CalculatorBrain calc = CalculatorBrain(height, weight);
+              print(calc.calculateBMI());
+              print(calc.getInterpretation());
 
               Navigator.push(
                 context,
